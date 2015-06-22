@@ -20,4 +20,5 @@ TODO
 +  store the uploaded data into Github so that users can easily modify it
 +  implement Github login provider 
 
-![](http://apifox.com/print-screen.jpg)
+[![](http://apifox.com/print-screen.jpg)]
+(http://ApiFox.com)
