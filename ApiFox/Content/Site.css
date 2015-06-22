@@ -1,0 +1,268 @@
+﻿body {
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Set padding to display errors that occur during databinding */
+.padding-error {
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .nofloat {
+        float: none;
+        padding: 10px 15px;
+    }
+}
+
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'champ';
+    src: url('fonts/champagne__limousines-webfont.eot');
+    src: url('fonts/champagne__limousines-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/champagne__limousines-webfont.woff') format('woff'),
+         url('fonts/champagne__limousines-webfont.ttf') format('truetype'),
+         url('fonts/champagne__limousines-webfont.svg#champagne__limousinesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'bebas';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+* {
+	margin:0px;
+	padding:0px;
+	 
+}
+
+body {
+	font-family:champ;
+	background-image:url(images/bodybg.jpg);
+	background-position:top center;
+	
+}
+
+::selection
+{
+color:#fff;
+background:#ff5614;
+}
+::-moz-selection
+{
+color:#ff0000;
+}
+
+#container {
+	width:1000px;
+	margin:0 auto 0 auto;
+}
+
+.container {
+    width:1000px;
+	margin:0 auto 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+font-family:bebas;
+}
+#header {
+	width:1000px;
+	float:left;
+}
+
+#lefttext {
+	float:left;
+	clear:none;
+	width:500px;
+	color:#FFF;
+	font-size:34px;
+	padding-top:10px;
+}
+
+#rightlogo {
+	float:left;
+	width:499px;
+}
+
+#rightlogo img {
+
+	transition:All 1s ease;
+	-webkit-transition:All 0.6s ease;
+	-moz-transition:All 0.6s ease;
+	-o-transition:All 0.6s ease;
+}
+
+#rightlogo img:hover {
+	transform: translate(-15px);
+-webkit-transform: translate(-15px);
+-moz-transform:  translate(-15px);
+-o-transform: translate(-15px);
+-ms-transform:  translate(-15px);
+}
+
+#middle {
+	width:1000px;
+	float:left;
+	margin-top:20px;
+}
+
+#middle-left {
+	width:400px;
+	float:left;
+}
+
+#middle-left p {
+	width:350px;
+	text-align:justify;
+	color:#FFF;
+	font-size:20px;
+	padding-bottom:20px;
+}
+
+#emailbox {
+	width:1000px;
+	float:left;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#FFF;
+	font-size:20px;
+	padding-top:20px;
+}
+
+#email {
+	width:345px;
+	height:50px;
+	padding-left:10px;
+	font-size:20px;
+	color:#5c5b5b;
+}
+
+#subscribe {
+	width:223px;
+	height:63px;
+	background-image:url(images/subbutton.png);
+	border:none;
+	background-color:transparent;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	font-family:bebas;
+	color:#FFF;
+	font-size:30px;	
+	padding-top:-15px;
+	transition:All 1s ease;
+	-webkit-transition:All 0.6s ease;
+	-moz-transition:All 0.6s ease;
+	-o-transition:All 0.6s ease;
+	transform: translate(0px, 3px);
+	-moz-transform: translate(0px, 3px);
+	-o-transform: translate(0px, 3px);
+	
+}
+
+#subscribe:hover {
+	transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+	-moz-transform:scale(1.05);
+	-o-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+}
+
+#footer {
+	width:100%;
+	min-height:100px;
+	float:left;
+	background-image:url(images/footerbg.png);
+	background-repeat:repeat-x;
+	background-color:#0a4e78;
+	
+}
+
+#footer .container {
+	width:1000px;
+	margin:0 auto 0 auto;
+	padding-top:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#9fdaff;
+	font-size:15px;
+}
+
+#rightlinks {
+	float:right;
+	text-align:right;
+	color:#FFF;
+}
+
+#rightlinks a {
+	color:inherit;
+	padding-right:20px;
+}
+
+.titlemid {
+	font-family:bebas;
+	font-size:50px;
+	color:#FFF;
+}
+
+.smalltitle {
+	font-family:bebas;
+	font-size:30px;
+	color:#FFF;
+}
+
+
+
+p {
+	text-align:justify;
+ 
+	font-size:20px;
+	padding-bottom:20px;
+    padding-left:10px;
+}
+
+.header-shadow {
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.05),0 1px 12px rgba(0,0,0,0.6);
+}
+p > a {
+color:white;
+}
+.navbar-inverse .navbar-nav > li > a {
+color:#FFC03B;
+}
+
+ html .k-upload-empty {
+border-width:1px;
+margin:3px;
+}
+
+/** { background-color : rgba(255,0,0,.2) ; }
+* * { background-color : rgba(0,255,0,.2) ; }
+* * * { background-color : rgba(0,0,255,.2) ; }
+* * * * { background-color : rgba(255,0,255,.2) ; }
+* * * * * { background-color : rgba(0,255,255,.2) ; }
+* * * * * * { background-color : rgba(255,255,0,.2) ; }*/

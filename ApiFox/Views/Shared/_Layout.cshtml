@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - ApiFox.com</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse header-shadow">
+        <div class="container">
+            <div id="header">
+                <div id="lefttext">
+                    Build simple APIs.
+                </div>
+                <div id="rightlogo">
+                    <a href="/">
+                        <img src="/content/images/apifox_logo.png" alt="ApiFox Logo">
+                    </a>
+                </div>
+                <img src="/content/images/separator.png" style="margin-top: 12px;" alt="ApiFox description">
+            </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                @Html.ActionLink("HOME", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("MY APIs", "Index", "Home", null, null, "home", null, null)</li>
+                    <li>@Html.ActionLink("STATS", "Index", "Home", null, null, "stats", null, null)</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ApiFox.com</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-1897207-44', 'apifox.com');
+        if (navigator.language != "ru" || navigator.language != "ru-ru")
+            ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

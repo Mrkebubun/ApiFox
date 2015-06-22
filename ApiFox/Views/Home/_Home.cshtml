@@ -1,0 +1,109 @@
+﻿<!-- ko with: home -->
+
+<div>
+    <h2>
+        How it works &nbsp;
+        <small>
+            <span class="infoHead">: </span>
+            You need to upload a <a href="http://en.wikipedia.org/wiki/Comma-separated_values" target="_blank">CSV file</a> with your data as a result you'll get back an <strong>Api Url</strong> that you can use. Or watch this <a href="http://www.youtube.com/watch?v=0Z2KO-4FhuM" target="_blank">demo</a>.
+        </small>
+    </h2>
+
+</div>
+
+<div id="example" class="k-content" style="padding-bottom:10px;">
+
+    <div class="row" id="upload">
+        <div class="demo-section col-lg-6 col-md-6 col-sm-6 text-center">
+            <h3>CSV => JSON</h3>
+            <input name="files" id="files" type="file" data-bind="kendoupload: {onSuccess: uploadSuccees}" />
+
+
+        </div>
+        <div class="demo-section col-lg-6 col-md-6 col-sm-6">
+            <label class="label label-primary">
+                Api List<span data-bind="text: ' - '+availApis().length"></span>
+            </label>
+
+            <table class="table">
+                <thead>
+                    <tr class="row">
+                        <th>#</th>
+                        <th>Api Name</th>
+                        <th>Api Url</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: availApis(), as:'season',visible : availApis()" style="display:none;">
+                    <tr class="row">
+                        <td data-bind="text:$index()+1"></td>
+                        <td class="col-lg-3 col-md-3 col-sm-3">
+                            <span data-bind="text: apiname, click: function(){ app.navigateToSettingsInfo(apiname())}, visible: !editMode()"></span>
+                            <form data-bind="submit: function(){ saveApi()},  visible: editMode">
+
+                                <input type="text" class="form-control" data-bind="value: apiname, hasfocus: isFocus2" />
+                            </form>
+                        </td>
+                        <td>
+                            <a href="#" target="_blank" data-bind="attr:{ href: '/api/'+apiurl()}, text: '/api/'+apiurl(), visible: !editMode()"></a>
+                            <div class="input-group">
+
+                                <span style="display:none" class="input-group-addon" data-bind="visible: editMode"><b>/api/</b></span>
+                                <form data-bind="submit: function(){ saveApi()} ,  visible: editMode">
+
+                                    <input class="form-control" type="text" data-bind="value: apiurl, hasfocus: isFocus1" />
+                                </form>
+                            </div>
+                        </td>
+                        <td style="width:85px;display: inline-block;">
+                            <span data-bind="click: function(){  editMode(!editMode())}">
+                                <span class="glyphicon" style="cursor:pointer" data-bind="css: {'glyphicon-pencil': !editMode(), 'glyphicon-ok': editMode()}"></span>
+                            </span>
+                            <span style="display:none;" data-bind="visible: editMode">
+
+                                <button class="btn btn-link" data-bind="popover: {template: 'popoverBindingTemplate', options: {title: 'Delete this api'}}">
+                                    <span class="glyphicon glyphicon-remove-sign"></span>
+                                </button>
+
+                                <script type="text/html" id="popoverBindingTemplate">
+                                    <button class="close pull-right" type="button" data-dismiss="popover">×</button>
+                                    <div class="well" style="width:150px">Please confirm</div>
+                                    <div style="padding-bottom: 35px;">
+                                        <button class="btn btn-link pull-left" type="button" data-dismiss="popover">Cancel</button>
+                                        <button class="btn btn-small btn-primary pull-right" data-dismiss="popover" data-bind="click: deleteMe">Delete</button>
+                                    </div>
+
+                                </script>
+
+
+                            </span>
+                        </td>
+
+                    </tr>
+                </tbody>
+                <tfoot data-bind="visible: loading">
+                    <tr>
+                        <td></td>
+                        <td>Loading...</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+
+
+<!-- /ko -->
+
+<div style="display:none;">
+
+    @using (Html.BeginForm("RegisterAnonymous", "Account", FormMethod.Post, new { id = "hdnregister" }))
+    {
+        @Html.AntiForgeryToken()
+        <input type="text" name="email" value="Anonymous" id="anonemail" />
+        <input type="text" name="password" value="Anonymous" />
+    }
+</div>
